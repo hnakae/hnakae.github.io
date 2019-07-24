@@ -634,14 +634,14 @@ if(false) {}
 
 /***/ 2:
 /*!****************************************************************************************************************************************!*\
-  !*** multi ./src/styles.scss ./node_modules/font-awesome/css/font-awesome.min.css ./node_modules/bootstrap/dist/css/bootstrap.min.css ***!
+  !*** multi ./src/styles.scss ./node_modules/bootstrap/dist/css/bootstrap.min.css ./node_modules/font-awesome/css/font-awesome.min.css ***!
   \****************************************************************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
 __webpack_require__(/*! /mnt/c/work/portfolio/src/styles.scss */"./src/styles.scss");
-__webpack_require__(/*! /mnt/c/work/portfolio/node_modules/font-awesome/css/font-awesome.min.css */"./node_modules/font-awesome/css/font-awesome.min.css");
-module.exports = __webpack_require__(/*! /mnt/c/work/portfolio/node_modules/bootstrap/dist/css/bootstrap.min.css */"./node_modules/bootstrap/dist/css/bootstrap.min.css");
+__webpack_require__(/*! /mnt/c/work/portfolio/node_modules/bootstrap/dist/css/bootstrap.min.css */"./node_modules/bootstrap/dist/css/bootstrap.min.css");
+module.exports = __webpack_require__(/*! /mnt/c/work/portfolio/node_modules/font-awesome/css/font-awesome.min.css */"./node_modules/font-awesome/css/font-awesome.min.css");
 
 
 /***/ })
