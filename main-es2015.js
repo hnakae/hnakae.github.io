@@ -96,7 +96,7 @@ module.exports = "<div class=\"contact-page\">\n  \n  <div class=\"contact-conte
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"home-page \">\n  <div class=\"content\">\n\n    <section class=\"home\">\n\n      <div class=\"container\">\n        <h1 class=\"animated  flipInX one\"><span>Hiro</span> Nakae</h1>\n        <p class=\"animated  flipInX one\">\n          Web Developer / Node / Angular<br>\n        </p><br>\n        <a class=\"action-btn animated  flipInX one\" routerLink=\"/about\">About me</a>\n      </div>\n\n    </section>\n    \n      \n\n    \n\n  </div>\n</div>\n"
+module.exports = "<div class=\"home-page \">\n  <div class=\"content\">\n\n    <section class=\"home\">\n\n      <div class=\"container\">\n        <h1 class=\"animated  fadeInDown one\"><span>Hiro</span> Nakae</h1>\n        <p class=\"animated  flipInX one\">\n          Web Developer / Node / Angular<br>\n        </p><br>\n        <a class=\"action-btn animated  flipInX one\" routerLink=\"/about\">About me</a>\n      </div>\n\n    </section>\n    \n      \n\n    \n\n  </div>\n</div>\n"
 
 /***/ }),
 
