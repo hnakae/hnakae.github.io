@@ -63,7 +63,7 @@ module.exports = "<div class=\"content\">\n  <ng-content></ng-content>\n</div>\n
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<!-- flex nav -->\n<!-- flex direction changes -->\n<div class=\"nav_bar\" id=\"nav_bar\"> \n  <header>\n    <a routerLink=\"/\">\n      <img (click)=\"hideMobileOn()\" class=\"logo\" src=\"../../../../assets/images/custom-logo.png\">\n    </a>\n\n\n    <nav [class]=\"hideMobile\" class=\"box\">\n      <div class=\"nav_links\">\n        <a (click)=\"hideMobileOn()\" routerLink=\"/\"><i class=\"fa fa-home\" aria-hidden=\"true\"></i> <span> Home</span> </a>\n        <a (click)=\"hideMobileOn()\" routerLink=\"/about\"> <i class=\"fa fa-user\" aria-hidden=\"true\"> </i> <span> About</span> </a>\n        <a (click)=\"hideMobileOn()\" routerLink=\"/work\"> <i class=\"fa fa-code\" aria-hidden=\"true\"> </i> <span> Work</span></a>\n        <a (click)=\"hideMobileOn()\" routerLink=\"/contact\"> <i class=\"fa fa-envelope-o\" aria-hidden=\"true\"> </i> <span> Contact</span></a>\n      </div>\n    </nav>\n\n    <ul class=\"social-media\">\n      <li>\n        <i class=\"fa fa-linkedin\" aria-hidden=\"true\"></i>\n      </li>\n      <li>\n          <i class=\"fa fa-twitter\" aria-hidden=\"true\"></i>\n      </li>\n      <li>\n          <i class=\"fa fa-github\" aria-hidden=\"true\"></i>\n      </li>\n      <li>\n          <i class=\"fa fa-medium\" aria-hidden=\"true\"></i>\n      </li>\n    </ul>\n\n    <img (click)=\"toggleMenu()\"  class=\"menu\" src=\"{{path}}\" alt=\"toggle menu\" id=\"menu\">\n    <!-- [ngClass]=\"status ? 'success' : 'danger'\" -->\n  </header>\n</div>\n\n"
+module.exports = "<!-- flex nav -->\n<!-- flex direction changes -->\n<div class=\"nav_bar\" id=\"nav_bar\"> \n  <header>\n    <a routerLink=\"/\">\n      <img (click)=\"hideMobileOn()\" class=\"logo\" src=\"../../../../assets/images/custom-logo.png\">\n    </a>\n\n    <nav [class]=\"hideMobile\" class=\"box\">\n      <div class=\"nav_links\">\n        <a (click)=\"hideMobileOn()\" routerLink=\"/\"><i class=\"fa fa-home\" aria-hidden=\"true\"></i> <span> Home</span> </a>\n        <a (click)=\"hideMobileOn()\" routerLink=\"/about\"> <i class=\"fa fa-user\" aria-hidden=\"true\"> </i> <span> About</span> </a>\n        <a (click)=\"hideMobileOn()\" routerLink=\"/work\"> <i class=\"fa fa-code\" aria-hidden=\"true\"> </i> <span> Work</span></a>\n        <a (click)=\"hideMobileOn()\" routerLink=\"/contact\"> <i class=\"fa fa-envelope-o\" aria-hidden=\"true\"> </i> <span> Contact</span></a>\n      </div>\n    </nav>\n\n    <ul class=\"social-media\">\n      <li>\n        <a href=\"https://www.linkedin.com/in/hironakae/\">\n          <i class=\"fa fa-linkedin\" aria-hidden=\"true\"></i>        \n        </a>\n      </li>\n      <li>\n          <a href=\"https://twitter.com/Hiro_Nakae\">\n            <i class=\"fa fa-twitter\" aria-hidden=\"true\"></i>          \n          </a>\n      </li>\n      <li>\n        <a href=\"https://github.com/hnakae\">\n          <i class=\"fa fa-github\" aria-hidden=\"true\"></i>\n        </a>\n      </li>\n      <li>\n        <a href=\"https://medium.com/@nakae27\">\n          <i class=\"fa fa-medium\" aria-hidden=\"true\"></i>          \n        </a>\n      </li>\n    </ul>\n\n    <img (click)=\"toggleMenu()\"  class=\"menu\" src=\"{{path}}\" alt=\"toggle menu\" id=\"menu\">\n  </header>\n</div>\n\n"
 
 /***/ }),
 
@@ -85,7 +85,7 @@ module.exports = "<div class=\"about-page\">\n  <div class=\"content\">\n\n    <
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"contact-page\">\n  \n  <div class=\"contact-content\">\n    <div class=\"wrapper\">\n      <div class=\"content group animated  slideInUp one\">\n        <h1>From:</h1>\n        <form action=\"/contact\" method=\"POST\">\n          <div class=\"fieldwrap group\">\n            <div class=\"formleft\">\n              <input\n                type=\"text\"\n                name=\"name\"\n                placeholder=\"Name\"\n              /><br />\n            </div>\n\n            <div class=\"formright\">\n              <input\n                type=\"text\"\n                name=\"email\"\n                placeholder=\"Email\"\n              /><br />\n            </div>\n          </div>\n          <div class=\"formmessage\">\n            <textarea\n              name=\"message\"\n              class=\"formmessagestyle\"\n              placeholder=\"Message\"\n            ></textarea\n            ><br />\n          </div>\n          <input type=\"submit\" class=\"send\" value=\"SEND\">\n        </form>\n        <!-- <p style=\"color: white;\">twitter linkedin github icons</p><br>\n        <a (click)=\"myfunction()\" routerLink=\"/\"><span>-</span> Home <span>-</span></a>\n        <a (click)=\"myfunction()\" routerLink=\"/about\"><span>-</span> About <span>-</span></a>\n        <a (click)=\"myfunction()\" routerLink=\"/work\"><span>-</span> Work <span>-</span></a>\n        <a (click)=\"myfunction()\" routerLink=\"/contact\"><span>-</span> Contact <span>-</span></a> -->\n      </div>\n    </div>\n  </div>\n\n  <!-- <div class=\"map\">\n    <app-gmap></app-gmap>\n  </div> -->\n</div>\n"
+module.exports = "<div class=\"contact-page\">\n  \n  <div class=\"contact-content\">\n    <div class=\"wrapper\">\n      <div class=\"content group animated  slideInUp one\">\n        <h1>From:</h1>\n        <form action=\"/contact\" method=\"POST\">\n          <div class=\"fieldwrap group\">\n            <div class=\"formleft\">\n              <input\n                type=\"text\"\n                name=\"name\"\n                id=\"name\"\n                placeholder=\"Name\"\n              /><br />\n            </div>\n\n            <div class=\"formright\">\n              <input\n                type=\"text\"\n                name=\"email\"\n                id=\"email\"\n                placeholder=\"Email\"\n              /><br />\n            </div>\n          </div>\n          <div class=\"formmessage\">\n            <textarea\n              name=\"message\"\n              id=\"message\"\n              class=\"formmessagestyle\"\n              placeholder=\"Message\"\n            ></textarea\n            ><br />\n          </div>\n          <input type=\"submit\" class=\"send\" value=\"SEND\">\n        </form>\n        <!-- <p style=\"color: white;\">twitter linkedin github icons</p><br>\n        <a (click)=\"myfunction()\" routerLink=\"/\"><span>-</span> Home <span>-</span></a>\n        <a (click)=\"myfunction()\" routerLink=\"/about\"><span>-</span> About <span>-</span></a>\n        <a (click)=\"myfunction()\" routerLink=\"/work\"><span>-</span> Work <span>-</span></a>\n        <a (click)=\"myfunction()\" routerLink=\"/contact\"><span>-</span> Contact <span>-</span></a> -->\n      </div>\n    </div>\n  </div>\n\n  <!-- <div class=\"map\">\n    <app-gmap></app-gmap>\n  </div> -->\n</div>\n"
 
 /***/ }),
 
@@ -856,10 +856,26 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
 
 
+// import $ from 'jquery';
 var ContactComponent = /** @class */ (function () {
     function ContactComponent() {
     }
     ContactComponent.prototype.ngOnInit = function () {
+        // $('form').on('submit', (e) => {
+        //   e.preventDefault();
+        //   const name = $('#name').val().trim();
+        //   const email = $('#email').val().trim();
+        //   const message = $('#message').val().trim();
+        //   const data = {
+        //     name,
+        //     email,
+        //     message
+        //   };
+        //   // tslint:disable-next-line: only-arrow-functions
+        //   $.post('/contact', data, function() {
+        //     console.log('server recieved data');
+        //   });
+        // });
     };
     ContactComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
