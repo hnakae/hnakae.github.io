@@ -85,7 +85,7 @@ module.exports = "<div class=\"about-page\">\n  <div class=\"content\">\n\n    <
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"contact-page\">\n  \n  <div class=\"contact-content\">\n    <div class=\"wrapper\">\n      <div class=\"content group animated  slideInUp one\">\n        <h1>From:</h1>\n\n        <form action=\"/contact\" method=\"POST\" #userForm=\"ngForm\">\n          {{ userForm.value | json }}\n          <div class=\"fieldwrap group\">\n            <div class=\"formleft\">\n              <input\n                type=\"text\"\n                name=\"name\"\n                id=\"name\"\n                placeholder=\"Name\"\n                ngModel\n              /><br />\n            </div>\n\n            <div class=\"formright\">\n              <input\n                type=\"text\"\n                name=\"email\"\n                id=\"email\"\n                placeholder=\"Email\"\n                ngModel\n              /><br />\n            </div>\n          </div>\n          <div class=\"formmessage\">\n            <textarea\n              name=\"message\"\n              id=\"message\"\n              class=\"formmessagestyle\"\n              placeholder=\"Message\"\n              ngModel\n            ></textarea\n            ><br />\n          </div>\n          <input type=\"submit\" class=\"send\" value=\"SEND\" ngModel>\n        </form>\n\n        <!-- <p style=\"color: white;\">twitter linkedin github icons</p><br>\n        <a (click)=\"myfunction()\" routerLink=\"/\"><span>-</span> Home <span>-</span></a>\n        <a (click)=\"myfunction()\" routerLink=\"/about\"><span>-</span> About <span>-</span></a>\n        <a (click)=\"myfunction()\" routerLink=\"/work\"><span>-</span> Work <span>-</span></a>\n        <a (click)=\"myfunction()\" routerLink=\"/contact\"><span>-</span> Contact <span>-</span></a> -->\n      </div>\n    </div>\n  </div>\n\n  <!-- <div class=\"map\">\n    <app-gmap></app-gmap>\n  </div> -->\n</div>\n"
+module.exports = "<div class=\"contact-page\">\n  \n  <div class=\"contact-content\">\n    <div class=\"wrapper\">\n      <div class=\"content group animated  slideInUp one\">\n        <h1 *ngIf=\"!submitted\">From:</h1>\n        <div *ngIf=\"submitted\" class=\"wrapper\">\n          <div class=\"content\">\n            <h1>Message Sent!</h1>\n          </div>\n        </div>\n        <form *ngIf=\"!submitted\" #userForm=\"ngForm\" (ngSubmit)=\"onSubmit()\" novalidate>\n\n          <div class=\"fieldwrap group\">\n            <div class=\"formleft\">\n              <input\n                type=\"text\"\n                name=\"name\"\n                id=\"name\"\n                placeholder=\"Name\"\n                [(ngModel)]=\"emailModel.name\"\n                required\n                #name=\"ngModel\"\n              /><br />\n            </div>\n\n            <!-- {{ name.untouched }} -->\n\n            <div class=\"formright\">\n              <input\n                type=\"text\"\n                name=\"email\"\n                id=\"email\"\n                required\n                placeholder=\"Email\"\n                [(ngModel)]=\"emailModel.email\"\n                [ngModelOptions]=\"{standalone: true}\"\n              /><br />\n            </div>\n          </div>\n          <div class=\"formmessage\">\n            <textarea\n              name=\"message\"\n              id=\"message\"\n              required\n              class=\"formmessagestyle\"\n              placeholder=\"Message\"\n              [(ngModel)]=\"emailModel.message\"\n            ></textarea\n            ><br />\n          </div>\n          <input type=\"submit\" class=\"send\" value=\"SEND\">\n        </form>\n\n        <!-- <p style=\"color: white;\">twitter linkedin github icons</p><br>\n        <a (click)=\"myfunction()\" routerLink=\"/\"><span>-</span> Home <span>-</span></a>\n        <a (click)=\"myfunction()\" routerLink=\"/about\"><span>-</span> About <span>-</span></a>\n        <a (click)=\"myfunction()\" routerLink=\"/work\"><span>-</span> Work <span>-</span></a>\n        <a (click)=\"myfunction()\" routerLink=\"/contact\"><span>-</span> Contact <span>-</span></a> -->\n      </div>\n    </div>\n  </div>\n\n  <!-- <div class=\"map\">\n    <app-gmap></app-gmap>\n  </div> -->\n</div>\n"
 
 /***/ }),
 
@@ -108,6 +108,27 @@ module.exports = "<div class=\"home-page \">\n  <div class=\"content\">\n\n    <
 /***/ (function(module, exports) {
 
 module.exports = "<div class=\"works-page animated fadeIn one\">\n  <!-- <div class=\"clickme\">\n    <p>click me</p>\n  </div> -->\n  <!-- <div *ngFor=\"let card of cards; let id = index+1\"> -->\n  <!-- <div class=\"container animated  fadeInUp one\"> -->\n    <!-- <div class=\"heading\">\n      <h1>Some Things I've <span>Built</span></h1><br>\n    </div> -->\n    <!-- <h1>These are various projects I've worked on over the years. I hope they may be of some use to you. If you'd like to contribute to any, feel free! I generally use the GPLv3 license, or MIT otherwise.</h1> -->\n    <div class=\"wrapper first featured\">\n      <div class=\"content\">\n        <h6>Full Stack</h6>\n        <h3>E-Commerce</h3>\n        <!-- <h4>Built With</h4> -->\n        <p>TypeScript / MySQL</p><br>\n\n        <a href=\"#\">Live Demo</a>\n        <a href=\"#\">View Source</a>\n        \n      </div>\n    </div>\n    <div class=\"subfeature second wrapper\">\n      <div class=\"content\">\n        <h3>Real Estate</h3>\n        <p>Coming soon</p><br>\n        <a href=\"#\" class=\"disabled\">Live Demo</a>\n        <a href=\"#\" class=\"disabled\">View Source</a>\n      </div>\n    </div>\n    <div class=\"subsubfeature third wrapper\">\n      <div class=\"content\">\n        <h3>Digital Agency</h3>\n        <p>Coming soon</p><br>\n        <a href=\"#\" class=\"disabled\">Live Demo</a>\n        <a href=\"#\" class=\"disabled\">View Source</a>\n      </div>\n    </div>\n    <div class=\"fourth wrapper\">\n      <div class=\"content\">\n        <h3>Restaurant</h3>\n        <p>Coming soon</p><br>\n        <a href=\"#\" class=\"disabled\">Live Demo</a>\n        <a href=\"#\" class=\"disabled\">View Source</a>\n      </div>\n    </div>\n    <!-- <div class=\"fifth wrapper \">\n      <div class=\"content addmore\">\n        <i class=\"fa fa-plus fa-3x\" aria-hidden=\"true\"></i>\n      </div>\n    </div> -->\n    <div class=\"sixth wrapper\">\n      <div class=\"content\">\n        <h3><span>Let's make things happen!</span></h3>\n        <a class=\"contactme\" routerLink=\"/contact\">Contact me</a>\n      </div>\n    </div>\n    \n    \n  <!-- </div> -->\n\n\n  <!-- </div> -->\n</div>"
+
+/***/ }),
+
+/***/ "./server/models/email.ts":
+/*!********************************!*\
+  !*** ./server/models/email.ts ***!
+  \********************************/
+/*! exports provided: Email */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "Email", function() { return Email; });
+class Email {
+    constructor(name, email, message) {
+        this.name = name;
+        this.email = email;
+        this.message = message;
+    }
+}
+
 
 /***/ }),
 
@@ -845,28 +866,26 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ContactComponent", function() { return ContactComponent; });
 /* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm2015/core.js");
+/* harmony import */ var _server_models_email__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../../../server/models/email */ "./server/models/email.ts");
+/* harmony import */ var _contact_service__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../../contact.service */ "./src/app/contact.service.ts");
 
 
 // import $ from 'jquery';
+
+
 let ContactComponent = class ContactComponent {
-    constructor() { }
-    ngOnInit() {
-        // $('form').on('submit', (e) => {
-        //   e.preventDefault();
-        //   const name = $('#name').val().trim();
-        //   const email = $('#email').val().trim();
-        //   const message = $('#message').val().trim();
-        //   const data = {
-        //     name,
-        //     email,
-        //     message
-        //   };
-        //   // tslint:disable-next-line: only-arrow-functions
-        //   $.post('/contact', data, function() {
-        //     console.log('server recieved data');
-        //   });
-        // });
+    // tslint:disable-next-line: variable-name
+    constructor(_contactService) {
+        this._contactService = _contactService;
+        this.emailModel = new _server_models_email__WEBPACK_IMPORTED_MODULE_2__["Email"]('', '', '');
+        this.submitted = false;
     }
+    onSubmit() {
+        this.submitted = true;
+        this._contactService.contact(this.emailModel)
+            .subscribe(data => console.log('Success!', data), error => console.error('Error!', error));
+    }
+    ngOnInit() { }
 };
 ContactComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
     Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
@@ -874,7 +893,7 @@ ContactComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
         template: __webpack_require__(/*! raw-loader!./contact.component.html */ "./node_modules/raw-loader/index.js!./src/app/components/site/contact/contact.component.html"),
         styles: [__webpack_require__(/*! ./contact.component.scss */ "./src/app/components/site/contact/contact.component.scss")]
     }),
-    tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [])
+    tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [_contact_service__WEBPACK_IMPORTED_MODULE_3__["ContactService"]])
 ], ContactComponent);
 
 
@@ -963,6 +982,44 @@ WorkComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
     }),
     tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [])
 ], WorkComponent);
+
+
+
+/***/ }),
+
+/***/ "./src/app/contact.service.ts":
+/*!************************************!*\
+  !*** ./src/app/contact.service.ts ***!
+  \************************************/
+/*! exports provided: ContactService */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ContactService", function() { return ContactService; });
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm2015/core.js");
+/* harmony import */ var _angular_common_http__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/common/http */ "./node_modules/@angular/common/fesm2015/http.js");
+
+
+
+let ContactService = class ContactService {
+    // tslint:disable-next-line: variable-name
+    constructor(_http) {
+        this._http = _http;
+        // tslint:disable-next-line: variable-name
+        this._url = 'http://localhost:3000/contact';
+    }
+    contact(email) {
+        return this._http.post(this._url, email);
+    }
+};
+ContactService = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+    Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Injectable"])({
+        providedIn: 'root'
+    }),
+    tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [_angular_common_http__WEBPACK_IMPORTED_MODULE_2__["HttpClient"]])
+], ContactService);
 
 
 
