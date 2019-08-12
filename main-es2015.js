@@ -720,8 +720,8 @@ let NavbarComponent = class NavbarComponent {
     constructor() {
         this.hideMobile = 'hide-mobile';
         this.path = '../../../../assets/images/custom-menu-icon.png';
-        this.mode = 'desktop' || false;
     }
+    // mode = 'desktop' || 'mobile';
     hideMobileOn() {
         const mq = window.matchMedia('(min-width: 1025px)');
         if (mq.matches) {
@@ -740,13 +740,13 @@ let NavbarComponent = class NavbarComponent {
     toggleMenu() {
         if (this.hideMobile === 'hide-mobile') {
             this.hideMobile = '';
-            this.mode = 'mobile';
+            // this.mode = 'mobile';
         }
         else {
             this.hideMobile = 'hide-mobile';
-            this.mode = 'desktop';
+            // this.mode = 'desktop';
         }
-        if (this.path === '../../../../assets/images/custom-menu-icon.png' && this.mode === 'mobile') {
+        if (this.path === '../../../../assets/images/custom-menu-icon.png') {
             this.path = '../../../../assets/images/custom-close.png';
         }
         else {
@@ -755,31 +755,35 @@ let NavbarComponent = class NavbarComponent {
     }
     WidthChange(mq) {
         if (mq.matches) {
-            // window width is at least 1025px
-            jquery__WEBPACK_IMPORTED_MODULE_2___default()('nav').toggleClass('show');
+            // desktop
+            jquery__WEBPACK_IMPORTED_MODULE_2___default()('nav').addClass('show');
+            // $('nav').removeClass('hide');
+            if (this.hideMobile === 'hide-mobile') {
+                this.toggleMenu();
+            }
             jquery__WEBPACK_IMPORTED_MODULE_2___default()('ul').addClass('show');
+            jquery__WEBPACK_IMPORTED_MODULE_2___default()('ul').removeClass('hide');
             jquery__WEBPACK_IMPORTED_MODULE_2___default()('i').addClass('show');
+            jquery__WEBPACK_IMPORTED_MODULE_2___default()('i').removeClass('hide');
         }
         else {
-            // window width is less than 1025px
-            // nav links invisible
-            jquery__WEBPACK_IMPORTED_MODULE_2___default()('nav').toggleClass('show');
+            // mobile
+            jquery__WEBPACK_IMPORTED_MODULE_2___default()('nav').removeClass('show');
+            // $('nav').addClass('hide');
+            if (this.hideMobile === '') {
+                this.toggleMenu();
+            }
+            jquery__WEBPACK_IMPORTED_MODULE_2___default()('ul').removeClass('show');
             jquery__WEBPACK_IMPORTED_MODULE_2___default()('ul').addClass('hide');
+            jquery__WEBPACK_IMPORTED_MODULE_2___default()('i').removeClass('show');
             jquery__WEBPACK_IMPORTED_MODULE_2___default()('i').addClass('hide');
-            // if (this.hideMobile === '') {
-            //   this.toggleMenu();
-            // }
         }
     }
     ngOnInit() {
         if (matchMedia) {
             const mq = window.matchMedia('(min-width:1025px)');
-            if (mq.matches) {
-                this.hideMobile = '';
-            }
-            // const mq2 = window.matchMedia('(max-width:1024px)');
-            // if (mq2.matches) {
-            //   this.hideMobile = 'hide-mobile';
+            // if (mq.matches) {
+            //   this.toggleMenu();
             // }
             // tslint:disable-next-line: deprecation
             mq.addListener(this.WidthChange);
